@@ -1,0 +1,14 @@
+c:\users\paweł_2\Documents\Visual Studio 2015\Projects\SnakeGame\SnakeGame\bin\Debug\SnakeGame.exe.config
+c:\users\paweł_2\Documents\Visual Studio 2015\Projects\SnakeGame\SnakeGame\bin\Debug\SnakeGame.exe
+c:\users\paweł_2\Documents\Visual Studio 2015\Projects\SnakeGame\SnakeGame\bin\Debug\SnakeGame.pdb
+c:\users\paweł_2\Documents\Visual Studio 2015\Projects\SnakeGame\SnakeGame\obj\Debug\SnakeGame.csprojResolveAssemblyReference.cache
+c:\users\paweł_2\Documents\Visual Studio 2015\Projects\SnakeGame\SnakeGame\obj\Debug\MainWindow.g.cs
+c:\users\paweł_2\Documents\Visual Studio 2015\Projects\SnakeGame\SnakeGame\obj\Debug\App.g.cs
+c:\users\paweł_2\Documents\Visual Studio 2015\Projects\SnakeGame\SnakeGame\obj\Debug\SnakeGame_MarkupCompile.cache
+c:\users\paweł_2\Documents\Visual Studio 2015\Projects\SnakeGame\SnakeGame\obj\Debug\SnakeGame_MarkupCompile.lref
+c:\users\paweł_2\Documents\Visual Studio 2015\Projects\SnakeGame\SnakeGame\obj\Debug\MainWindow.baml
+c:\users\paweł_2\Documents\Visual Studio 2015\Projects\SnakeGame\SnakeGame\obj\Debug\SnakeGame.g.resources
+c:\users\paweł_2\Documents\Visual Studio 2015\Projects\SnakeGame\SnakeGame\obj\Debug\SnakeGame.Properties.Resources.resources
+c:\users\paweł_2\Documents\Visual Studio 2015\Projects\SnakeGame\SnakeGame\obj\Debug\SnakeGame.csproj.GenerateResource.Cache
+c:\users\paweł_2\Documents\Visual Studio 2015\Projects\SnakeGame\SnakeGame\obj\Debug\SnakeGame.exe
+c:\users\paweł_2\Documents\Visual Studio 2015\Projects\SnakeGame\SnakeGame\obj\Debug\SnakeGame.pdb
