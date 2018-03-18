@@ -21,6 +21,7 @@ namespace SnakeGame
     public partial class MainWindow : Window
     {
         private Snake mySnake;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -31,22 +32,7 @@ namespace SnakeGame
 
         private void OnButtonKeyDown(object sender, KeyEventArgs e)
         {
-            if (e.Key == Key.Right)
-            {
-                mySnake.GoRight();
-            }
-            if (e.Key == Key.Left)
-            {
-                mySnake.GoLeft();
-            }
-            if (e.Key == Key.Up)
-            {
-                mySnake.GoUp();
-            }
-            if (e.Key == Key.Down)
-            {
-                mySnake.GoDown();
-            }
+            mySnake.Move(e.Key);
         }
     }
 

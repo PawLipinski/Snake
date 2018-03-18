@@ -15,17 +15,34 @@ namespace SnakeGame
         {
             segmentBody = new Rectangle();
             segmentBody.Stroke = new SolidColorBrush(Colors.Green);
-            segmentBody.Fill = new SolidColorBrush(Colors.Black);
+            segmentBody.Fill = new SolidColorBrush(Colors.Green);
             segmentBody.Width = SnakeSegment.module;
             segmentBody.Height = SnakeSegment.module;
         }
 
-        public void moveToNewPlace(Canvas board)
+        public void moveToNewPlace(Canvas board, Snake snakeObject)
         {
             board.Children.Remove(this.segmentBody);
-            Random generator = new Random();
-            this.X = generator.Next(0,20)*30;
-            this.Y = generator.Next(0, 20) * 30;
+            bool onSnake;
+            do
+            {
+                onSnake = false;
+                Random generator = new Random();
+                this.X = generator.Next(0, 20) * 30;
+                this.Y = generator.Next(0, 20) * 30;
+                foreach (var segment in snakeObject.Segments)
+                {
+                    if ((segment.X == this.X) && (segment.Y == this.Y))
+                    {
+                        onSnake = true;
+                    }
+                }
+
+                Canvas.SetLeft(this.segmentBody, this.X);
+                Canvas.SetTop(this.segmentBody, this.Y);
+
+            }
+            while (onSnake == true);
             board.Children.Add(this.segmentBody);
         }
     }

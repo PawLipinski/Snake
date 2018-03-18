@@ -30,8 +30,7 @@ namespace SnakeGame
         }
 
         public void printMe(Canvas gamesBoard)
-        {
-            gamesBoard.Children.Remove(this.segmentBody);
+        { 
             Canvas.SetLeft(this.segmentBody, this.X);
             Canvas.SetTop(this.segmentBody, this.Y);
             gamesBoard.Children.Add(this.segmentBody);

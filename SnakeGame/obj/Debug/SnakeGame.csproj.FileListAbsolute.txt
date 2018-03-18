@@ -12,3 +12,18 @@ c:\users\paweł_2\Documents\Visual Studio 2015\Projects\SnakeGame\SnakeGame\obj\
 c:\users\paweł_2\Documents\Visual Studio 2015\Projects\SnakeGame\SnakeGame\obj\Debug\SnakeGame.csproj.GenerateResource.Cache
 c:\users\paweł_2\Documents\Visual Studio 2015\Projects\SnakeGame\SnakeGame\obj\Debug\SnakeGame.exe
 c:\users\paweł_2\Documents\Visual Studio 2015\Projects\SnakeGame\SnakeGame\obj\Debug\SnakeGame.pdb
+D:\Projekty\Snake\SnakeGame\bin\Debug\SnakeGame.exe.config
+D:\Projekty\Snake\SnakeGame\bin\Debug\SnakeGame.exe
+D:\Projekty\Snake\SnakeGame\bin\Debug\SnakeGame.pdb
+D:\Projekty\Snake\SnakeGame\obj\Debug\SnakeGame.csprojResolveAssemblyReference.cache
+D:\Projekty\Snake\SnakeGame\obj\Debug\MainWindow.g.cs
+D:\Projekty\Snake\SnakeGame\obj\Debug\App.g.cs
+D:\Projekty\Snake\SnakeGame\obj\Debug\SnakeGame_MarkupCompile.cache
+D:\Projekty\Snake\SnakeGame\obj\Debug\SnakeGame_MarkupCompile.lref
+D:\Projekty\Snake\SnakeGame\obj\Debug\MainWindow.baml
+D:\Projekty\Snake\SnakeGame\obj\Debug\SnakeGame.g.resources
+D:\Projekty\Snake\SnakeGame\obj\Debug\SnakeGame.Properties.Resources.resources
+D:\Projekty\Snake\SnakeGame\obj\Debug\SnakeGame.csproj.GenerateResource.Cache
+D:\Projekty\Snake\SnakeGame\obj\Debug\SnakeGame.csproj.CoreCompileInputs.cache
+D:\Projekty\Snake\SnakeGame\obj\Debug\SnakeGame.exe
+D:\Projekty\Snake\SnakeGame\obj\Debug\SnakeGame.pdb
