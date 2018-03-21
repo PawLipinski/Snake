@@ -35,7 +35,7 @@ namespace SnakeGame
 
             snakeTimer = new System.Windows.Threading.DispatcherTimer();
             snakeTimer.Tick += new EventHandler(dispatcherTimer_Tick);
-            snakeTimer.Interval = new TimeSpan(0, 0, 0, 0, 50);
+            snakeTimer.Interval = new TimeSpan(0, 0, 0, 0, 80);
             snakeTimer.Start();
 
             this.currentMovement = GoUp;
@@ -58,7 +58,7 @@ namespace SnakeGame
         }
 
         public SnakeSegment Head { get { return this.head; } }
-        public Queue<SnakeSegment> Segments { get{ return this.segments; } }
+        public Queue<SnakeSegment> Segments { get { return this.segments; } }
 
         public void Move()
         {
@@ -106,15 +106,7 @@ namespace SnakeGame
                 IsDead();
                 printMe();
             }
-            else
-            {
-                this.segments.Enqueue(head);
-                head = new SnakeSegment(this.head.X = 0, this.head.Y);
-                isFoodEaten();
-                IsDead();
-                printMe();
-            }
-
+            else TeleportMe();
         }
 
         internal void GoLeft()
@@ -127,6 +119,7 @@ namespace SnakeGame
                 IsDead();
                 printMe();
             }
+            else TeleportMe();
         }
 
         internal void GoUp()
@@ -139,6 +132,7 @@ namespace SnakeGame
                 IsDead();
                 printMe();
             }
+            else TeleportMe();
         }
 
         internal void GoDown()
@@ -151,6 +145,7 @@ namespace SnakeGame
                 IsDead();
                 printMe();
             }
+            else TeleportMe();
         }
 
         private bool isFoodEaten()
@@ -165,13 +160,25 @@ namespace SnakeGame
             else return false;
         }
 
+        private void TeleportMe()
+        {
+            this.segments.Enqueue(head);
+
+            if (currentDirection == Key.Right) head = new SnakeSegment(this.head.X = 0, this.head.Y);
+            else if (currentDirection == Key.Left) head = new SnakeSegment(this.head.X = ((int)board.Width - 30), this.head.Y);
+            else if (currentDirection == Key.Up) head = new SnakeSegment(this.head.X, this.head.Y = ((int)board.Height - 30));
+            else if (currentDirection == Key.Down) head = new SnakeSegment(this.head.X, this.head.Y = 0);
+
+            printMe();
+        }
+
         private bool IsDead()
         {
             bool isDead = false;
 
             foreach (var segment in segments)
             {
-                if ((head.X == segment.X)&&(head.Y == segment.Y))
+                if ((head.X == segment.X) && (head.Y == segment.Y))
                 {
                     isDead = true;
                 }
