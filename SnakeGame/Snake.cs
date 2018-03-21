@@ -15,6 +15,9 @@ namespace SnakeGame
         private Key counterDirection;
         private Timer snakeTimer;
 
+        private delegate void MovementDelegate();
+        private MovementDelegate currentMovement;
+
         private Food foodObject;
 
         Queue<SnakeSegment> segments;
@@ -28,14 +31,6 @@ namespace SnakeGame
             queueLength = 3;
             foodObject = new Food();
             foodObject.moveToNewPlace(this.board, this);
-
-            snakeTimer = new Timer(60000); // 1 sec = 1000, 60 sec = 60000
-
-            t.AutoReset = true;
-
-            t.Elapsed += new System.Timers.ElapsedEventHandler(t_Elapsed);
-
-            t.Start();
 
             printMe();
         }
@@ -52,33 +47,38 @@ namespace SnakeGame
         public SnakeSegment Head { get { return this.head; } }
         public Queue<SnakeSegment> Segments { get{ return this.segments; } }
 
-        public void Move(Key newDirection)
+        public void Move()
         {
-            if ((newDirection != currentDirection)&&(newDirection != counterDirection))
+            this.currentMovement();
+        }
+
+        public void ChangeDirection(Key newDirection)
+        {
+            if ((newDirection != currentDirection) && (newDirection != counterDirection))
             {
                 if (newDirection == Key.Right)
                 {
                     this.currentDirection = Key.Right;
                     this.counterDirection = Key.Left;
-                    this.GoRight();
+                    this.currentMovement = GoRight;
                 }
                 if (newDirection == Key.Left)
                 {
                     this.currentDirection = Key.Left;
                     this.counterDirection = Key.Right;
-                    this.GoLeft();
+                    this.currentMovement = GoLeft;
                 }
                 if (newDirection == Key.Up)
                 {
                     this.currentDirection = Key.Up;
                     this.counterDirection = Key.Down;
-                    this.GoUp();
+                    this.currentMovement = GoUp;
                 }
                 if (newDirection == Key.Down)
                 {
                     this.currentDirection = Key.Down;
                     this.counterDirection = Key.Up;
-                    this.GoDown();
+                    this.currentMovement = GoDown;
                 }
             }
         }
@@ -175,14 +175,6 @@ namespace SnakeGame
         {
             MessageBox.Show("Koniec Gry!");
             System.Windows.Application.Current.Shutdown();
-        }
-
-        private static void t_Elapsed(object sender, System.Timers.ElapsedEventArgs e)
-
-        {
-
-            
-
         }
 
     }
