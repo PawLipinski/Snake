@@ -32,7 +32,7 @@ namespace SnakeGame
 
         private void OnButtonKeyDown(object sender, KeyEventArgs e)
         {
-            mySnake.Move(e.Key);
+            mySnake.ChangeDirection(e.Key);
         }
     }
 

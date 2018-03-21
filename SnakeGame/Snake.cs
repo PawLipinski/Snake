@@ -4,6 +4,7 @@ using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using System.Windows.Threading;
 
 namespace SnakeGame
 {
@@ -13,7 +14,7 @@ namespace SnakeGame
         private Canvas board;
         private Key currentDirection;
         private Key counterDirection;
-        private Timer snakeTimer;
+        private DispatcherTimer snakeTimer;
 
         private delegate void MovementDelegate();
         private MovementDelegate currentMovement;
@@ -32,7 +33,19 @@ namespace SnakeGame
             foodObject = new Food();
             foodObject.moveToNewPlace(this.board, this);
 
+            snakeTimer = new System.Windows.Threading.DispatcherTimer();
+            snakeTimer.Tick += new EventHandler(dispatcherTimer_Tick);
+            snakeTimer.Interval = new TimeSpan(0, 0, 0, 0, 50);
+            snakeTimer.Start();
+
+            this.currentMovement = GoUp;
+
             printMe();
+        }
+
+        private void dispatcherTimer_Tick(object sender, EventArgs e)
+        {
+            this.Move();
         }
 
         public void printMe()
